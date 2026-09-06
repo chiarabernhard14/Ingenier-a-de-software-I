@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+:root {
+    --accent-color: #090933;
+    --base-color: #7F4CA5;
+    --text-color: #D3D3FF;
+    --input-bg-color: rgba(255, 255, 255, 0.4);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: 'Nunito', sans-serif;
+    font-size: 12 pt;
+    color: var(--accent-color);
+}
+
+body {
+    min-height: 100vh;
+    background-image: url(fondo.jpg);
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.wrapper {
+    width: max(40%, 400px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    background-color: rgba(248, 245, 245, 0.45);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 25px;
+    padding: 40px 30px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+h1 {
+    margin-bottom: 30px;
+    color: var(--accent-color);
+}
+
+form {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+form div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 25px;
+    gap: 0px;
+    width: 100%;
+}
+
+form label {
+    box-sizing: border-box;
+    flex-shrink: 0;
+    height: 45px;
+    width: 50px;
+    background-color: var(--base-color);
+    border: 2px solid var(--base-color);
+    border-radius: 8px 0 0 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+form label svg {
+    fill: var(--text-color);
+}
+
+input {
+    box-sizing: border-box;
+    font-family: 'Nunito', sans-serif;
+    background-color: var(--input-bg-color);
+    height: 45px;
+    width: 60%;
+    border: 2px solid rgba(255, 255, 255, 0.6);
+    border-left: none;
+    border-radius: 0 8px 8px 0;
+    padding: 10px;
+    color: var(--base-color);
+    outline: none;
+}
+
+input::placeholder {
+    color: var(--accent-color);
+}
+
+div:has(input:focus) > label {
+    background-color: var(--accent-color);
+}
+
+.botones {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+    margin-top: 30px;
+}
+
+button {
+    font-family: "Nunito", sans-serif;
+    background-color: var(--base-color);
+    color: var(--text-color);
+    border: none;
+    padding: 12px 25px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 12pt;
+    font-weight: 600;
+    transition: background-color 0.3s;
+    margin-top: 20px;
+}
+
+form button:hover {
+    background-color: var(--accent-color);
+}
+
+form div.incorrecto label {
+    background-color: #e05f56;
+    border-color: #e05f56;
+}
+
+form div.incorrecto input {
+    border-color: #e05f56;
+}
+
+#mensaje-error {
+    color: var(--accent-color);
+    padding: 20px;
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+}
